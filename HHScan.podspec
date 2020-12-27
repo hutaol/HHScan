@@ -30,9 +30,9 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'HHScan/Classes/**/*'
+  s.source_files = 'Classes/**/*'
   
-  s.resources   = 'HHScan/Assets/*.{png,xib,nib,bundle}'
+  s.resources   = 'Assets/*.{png,xib,nib,bundle}'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
