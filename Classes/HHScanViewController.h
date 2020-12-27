@@ -18,10 +18,14 @@ typedef void(^ScanResultBlock)(NSString *scanResult);
 @property (nonatomic, assign) BOOL showPhoto;
 @property (nonatomic, assign) BOOL showMyCode;
 
+/// TODO 重写方法
+
 /// 去相册
 - (void)onClickPhoto;
 /// 去我的二维码
 - (void)onClickMyCode;
+
+- (void)processWithResult:(NSString *)resultStr;
 
 @end
 

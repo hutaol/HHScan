@@ -138,11 +138,11 @@ static HHScanManager *_instance;
     
     SystemSoundID soundID = 0;
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)(fileUrl), &soundID);
-    AudioServicesAddSystemSoundCompletion(soundID, NULL, NULL, soundCompleteCallback, NULL);
+    AudioServicesAddSystemSoundCompletion(soundID, NULL, NULL, hhScanSoundCompleteCallback, NULL);
     AudioServicesPlaySystemSound(soundID); // 播放音效
 }
 
-void soundCompleteCallback(SystemSoundID soundID, void *clientData){
+void hhScanSoundCompleteCallback(SystemSoundID soundID, void *clientData){
 
 }
 
