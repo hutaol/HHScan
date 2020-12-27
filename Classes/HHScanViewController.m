@@ -170,7 +170,11 @@
     if ([_manager isRunning]) {
         [_manager stopRunning];
     }
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if (self.presentingViewController) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 // 取消扫码结果
@@ -199,9 +203,12 @@
     if (self.resultBlock) {
         self.resultBlock(resultStr);
     }
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+    
+    if (self.presentingViewController) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (CAKeyframeAnimation *)getAnimation {
